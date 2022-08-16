@@ -11,11 +11,15 @@ body {
     box-sizing: border-box;
 }
 
+#margin{
+    margin-top: 20px;
+}
+
 .list{
     display: flex;
     list-style: none;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     justify-content: space-between;
     align-items: center;
     margin: 10px auto;
@@ -58,20 +62,60 @@ body {
     margin-bottom: 70px;
 }
 
-.Hour{
+.menu{
+    display:flex;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.menu li{
+    display:block;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+
+.periodo{
+    text-align: center;
+    position: relative;
+    display: block;
+    color:#fff;
+    text-decoration: none;
     border: 1px solid #e9630a;
     border-radius: 10px;
-    line-height: 70%;
     padding: 3px;
-
-}
-
-.Hour:hover{
-    color: #fff;
-    cursor: pointer;
     background: #e9630a;
+    cursor: default;
 }
 
-#margin{
-    margin-top:30px;
+.menu li ul{
+    top: 25px;
+    left: -40px;
+    position:absolute;
+    list-style: none;
+    display: none;
+}
+
+.menu li:hover ul{
+    display:block;
+}
+
+span.hour{
+    cursor: pointer;
+    background: #fff;
+    justify-content: center;
+    display: block;
+    border: 1px solid #e9630a;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+span.hour:hover{
+    background:#e9630a;
+    color:#fff
 }
