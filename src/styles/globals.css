@@ -11,19 +11,13 @@ body {
     box-sizing: border-box;
 }
 
-#margin{
-    margin-top: 20px;
+ul{
+    list-style: none;
 }
 
-.list{
-    display: flex;
-    list-style: none;
-    width: 100%;
-    max-width: 500px;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px auto;
-    padding: 0;
+#layout{
+    margin: auto;
+    width: 500px;
 }
 
 .listItem{
@@ -31,25 +25,17 @@ body {
     width: 100%;
 }
 
-.listItem.active::before{
-    content: '';
-    position: absolute;
-    background: #e9630a;
-    width: 100%;
-    max-width: 55px;
-    height: 90px;
-    top: -50px;
-    border-radius: 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 6px 5px 8px rgb(85 119 102 / 31%);
+.listItem.active{
+    z-index: 0;
+    border:1px solid #e9630a;
+    background: #fff;
+    border-radius: 10px;
 }
 
 .listItem span{
     text-align: center;
     display: block;
     position: relative;
-    z-index: 2;
 }
 
 .title{
@@ -63,6 +49,7 @@ body {
 }
 
 .menu{
+    margin: 10px auto;
     display:flex;
     position: relative;
     width: 100%;
@@ -73,49 +60,53 @@ body {
     padding: 0;
 }
 
-.menu li{
-    display:block;
-    text-align: center;
-    position: relative;
-    float: left;
-}
-
-.periodo{
-    text-align: center;
-    position: relative;
-    display: block;
-    color:#fff;
-    text-decoration: none;
-    border: 1px solid #e9630a;
-    border-radius: 10px;
-    padding: 3px;
-    background: #e9630a;
-    cursor: default;
-}
-
-.menu li ul{
-    top: 25px;
-    left: -40px;
+ul.menu ul{
+    top: 20px;
+    left: -35px;
     position:absolute;
-    list-style: none;
     display: none;
 }
 
-.menu li:hover ul{
+.menu li{
+    position: relative;
+}
+
+.menu li span{
     display:block;
 }
 
-span.hour{
+ul.submenu-1 li span{
+    z-index: 1;
     cursor: pointer;
-    background: #fff;
-    justify-content: center;
-    display: block;
+    padding: 5px;
     border: 1px solid #e9630a;
+    background: #fff;
     border-radius: 10px;
-    padding: 2px;
 }
 
-span.hour:hover{
-    background:#e9630a;
-    color:#fff
+ul.submenu-1 li span:hover{
+    background: #e9630a;
+}
+
+ul.submenu-2 li span{
+    top: -25px;
+    left: 62px;
+    padding: 5px;
+    border: 1px solid #e9630a;
+    background: #fff;
+    border-radius: 10px;
+}
+
+ul.submenu-2 li span:hover{
+    background: #e9630a;
+}
+
+.menu li:hover>ul.submenu-1{
+    display:block;
+}
+
+.menu li:hover>ul.submenu-2{
+    display:block;
+    padding: 5px;
+    left: -5px;
 }
