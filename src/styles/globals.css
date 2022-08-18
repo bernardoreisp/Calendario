@@ -15,7 +15,13 @@ ul{
     list-style: none;
 }
 
+hr{
+    border-color: black;
+}
+
 #layout{
+    height: auto;
+    border: 1px solid red;
     margin: auto;
     width: 500px;
 }
@@ -23,13 +29,6 @@ ul{
 .listItem{
     position: relative;
     width: 100%;
-}
-
-.listItem.active{
-    z-index: 0;
-    border:1px solid #e9630a;
-    background: #fff;
-    border-radius: 10px;
 }
 
 .listItem span{
@@ -60,53 +59,48 @@ ul{
     padding: 0;
 }
 
-ul.menu ul{
-    top: 20px;
-    left: -35px;
-    position:absolute;
-    display: none;
-}
-
-.menu li{
-    position: relative;
-}
-
-.menu li span{
-    display:block;
-}
-
-ul.submenu-1 li span{
-    z-index: 1;
+.button{
+    width: 100%;
+    border: 1px solid orange;
     cursor: pointer;
-    padding: 5px;
-    border: 1px solid #e9630a;
-    background: #fff;
     border-radius: 10px;
-}
-
-ul.submenu-1 li span:hover{
-    background: #e9630a;
-}
-
-ul.submenu-2 li span{
-    top: -25px;
-    left: 62px;
-    padding: 5px;
-    border: 1px solid #e9630a;
     background: #fff;
+}
+
+.esconder{
+    margin: 10px auto;
+    display:none
+}
+
+.mostrar{
+    width: fit-content;
+    display: block;
+    margin: 10px auto;
+}
+
+.periodos{
     border-radius: 10px;
-}
-
-ul.submenu-2 li span:hover{
-    background: #e9630a;
-}
-
-.menu li:hover>ul.submenu-1{
-    display:block;
-}
-
-.menu li:hover>ul.submenu-2{
-    display:block;
+    display:flex;
     padding: 5px;
-    left: -5px;
+    margin: 10px auto;
+    width: fit-content;
+    border: 1px solid orange;
+}
+
+.horarios{
+    border-radius: 10px;
+    cursor: pointer;
+    width: 111.63px;
+    padding: 5px;
+    margin-right: 10px;
+    display:inline-block;
+    border: 1px solid orange;
+}
+
+.horarios:hover{
+    background:orange;
+}
+
+.linhaHorarios{
+    margin: 10px;
 }
