@@ -20,6 +20,7 @@ hr{
 }
 
 .listItem{
+    margin: 0 5px ;
     position: relative;
     width: 100%;
 }
@@ -37,7 +38,7 @@ hr{
 
 .subtitle{
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 }
 
 .menu{
@@ -60,10 +61,22 @@ hr{
     background: #fff;
 }
 
+.active{
+    background: orange;
+    color: white;
+}
+
 .agenda{
+    margin: 20px 50px;
+    border: 5px solid black;
+    text-align: center;
     padding: 0;
-    width: fit-content;
     display: block;
+}
+
+.agenda li{
+    display:inline-block;
+    width: 31%;
 }
 
 .periodos{
@@ -82,7 +95,7 @@ hr{
     cursor: pointer;
     width: 111.43px;
     padding: 5px;
-    margin: 10px auto;
+    margin: 10px;
     display: inline-block;
     border: 1px solid orange;
 }
