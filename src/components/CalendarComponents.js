@@ -1,24 +1,13 @@
 import React, { useState } from 'react';
 import moment from 'moment';
+import listaHorarios from '../horarios';
 
-const semanas = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
-const horariosManha = ['06:00 - 06:30', '06:30 - 07:00', '07:00 - 07:30', '07:30 - 08:00', '08:00 - 08:30', '08:30 - 09:00', '09:00 - 09:30', '09:30 - 10:00', '10:00 - 10:30', '10:30 - 11:00', '11:00 - 11:30', '11:30 - 12:00'];
-const horariosTarde = ['12:00 - 12:30', '12:30 - 13:00', '13:00 - 13:30', '13:30 - 14:00', '14:00 - 14:30', '14:30 - 15:00', '15:00 - 15:30', '15:30 - 16:00', '16:00 - 16:30', '16:30 - 17:00', '17:00 - 17:30', '17:30 - 18:00'];
-const horariosNoite = ['18:00 - 18:30', '18:30 - 19:00', '19:00 - 19:30', '19:30 - 20:00', '20:00 - 20:30', '20:30 - 21:00', '21:00 - 21:30', '21:30 - 22:00', '22:00 - 22:30', '22:30 - 23:00', '23:00 - 23:30', '23:30 - 00:00'];
 let data = moment();
+const semanas = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
 
-function checkHora() {
-    let manha = moment().isBetween('12:00', '18:00')
-    let tarde = moment().isBetween('06:00', '12:00')
-    let noite = moment().isBetween('18:00', '00:00')
-    if (manha === true && tarde === false && noite === false){
-        return horariosManha
-    } else if (manha === false && tarde === true && noite === false){
-        return horariosTarde
-    } else if (manha === false && tarde === false && noite === true){
-        return horariosNoite
-    }
-}
+let manha = listaHorarios.filter(horario => horario.final <= '12:00' && horario.final > '00:00');
+let tarde = listaHorarios.filter(horario => horario.final <= '18:00' && horario.final > '12:00');
+let noite = listaHorarios.filter(horario => horario.inicio >= '18:00' && horario.inicio <= '23:30');
 
 function soma1Dia() {
     const data = moment();
@@ -218,11 +207,19 @@ export function CalendarComponets() {
         const hoje7 = setHoje7(segunda.format('DD/MM'))
         return [hoje, hoje2, hoje3, hoje4, hoje5, hoje6, hoje7]
     }
+    
+    let disabled
+    let dataCheck = moment().format('DD/MM')
+    if(hoje === dataCheck){
+        disabled = true
+    }else{
+        disabled = false
+    }
 
     return (
         <>
             <button id='floatRight' onClick={proxSem}>Próxima Semana {">>>"}</button>
-            <button id='floatLeft' onClick={semAnt}>{"<<<"} Semana Anterior</button>
+            <button id='floatLeft' onClick={semAnt} disabled={disabled}>{"<<<"} Semana Anterior</button>
 
             <div>
                 <ul className="menu">
@@ -262,8 +259,8 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Manhã, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosManha.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                manha.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -271,8 +268,8 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosTarde.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                tarde.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -280,8 +277,8 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosNoite.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                noite.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -293,26 +290,26 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Manhã, {quarta.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosManha.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                manha.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {quarta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosTarde.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                tarde.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {quarta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosNoite.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                noite.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -324,26 +321,26 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Manhã, {quinta.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosManha.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                manha.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {quinta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosTarde.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                tarde.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {quinta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosNoite.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                noite.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -355,26 +352,26 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Manhã, {sexta.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosManha.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                manha.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {sexta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosTarde.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                tarde.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {sexta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosNoite.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                noite.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -386,26 +383,26 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Manhã, {sabado.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosManha.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                manha.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {sabado.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosTarde.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                tarde.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {sabado.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosNoite.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                noite.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -417,26 +414,26 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Manhã, {domingo.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosManha.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                manha.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {domingo.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosTarde.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                tarde.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {domingo.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosNoite.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                noite.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -448,26 +445,26 @@ export function CalendarComponets() {
                     <li><span className='periodos'>Manhã, {segunda.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosManha.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                manha.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {segunda.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosTarde.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                tarde.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {segunda.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
-                                horariosNoite.map((horarios, index) => (
-                                    <button className='horarios' key={index}>{horarios}</button>
+                                noite.map((horario, index) => (
+                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
                                 ))
                             }
                         </ul>
