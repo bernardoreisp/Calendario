@@ -1,5 +1,6 @@
 html,
 body {
+    min-width: 375px;
     padding: 0;
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -8,6 +9,7 @@ body {
 }
 
 * {
+    font-size: 20px;
     box-sizing: border-box;
 }
 
@@ -15,115 +17,104 @@ ul{
     list-style: none;
 }
 
-hr{
-    border-color: black;
+#layout{
+    margin: 0 auto;
+    width: fit-content;
 }
 
-#floatRight{
+.botaoSemana{
+    margin: 5px 10px;
+    width: 150px;
     background: #fff;
     padding: 5px;
     cursor: pointer;
     border-radius: 10px;
-    border: 1px solid orange;
+    border: 1px solid rgb(1, 134, 211);
     text-align: center;
-    margin-right: 98px;
-    float: right;
-    position: relative;
 }
 
-#floatRight:hover{
-    color: #fff;
-    background:orange;
-}
-
-#floatLeft{
-    background: #fff;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: 1px solid orange;
-    text-align: center;
-    margin-left:100px;
-    float: left;
-    position: relative;
-}
-
-#floatLeft:hover{
-    color: #fff;
-    background:orange;
+.botaoSemana:hover{
+    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
 }
 
 
 #root{
-    margin-top: 50px;
+    
+    margin: 10px auto;
 }
 
 .menu{
-    margin: 10px auto;
+    margin:0px auto;
     display:flex;
-    position: relative;
-    width: 100%;
-    max-width: 500px;
+    width: 98%;
     list-style: none;
-    justify-content: space-between;
-    align-items: center;
     padding: 0;
 }
 
 
 .listItem{
-    margin: 0 5px ;
+    justify-content: space-between;
+    margin: 20px auto ;
     position: relative;
-    width: 100%;
-}
-
-.listItem span{
-    text-align: center;
-    display: block;
-    position: relative;
+    width: 12%;
 }
 
 .button{
+    line-height: 30px;
     margin-top: 10px;
     width: 100%;
-    border: 1px solid orange;
+    border: 1px solid rgb(1, 134, 211);
     cursor: pointer;
     border-radius: 10px;
     background: #fff;
 }
 
 .button:hover{
-    background: orange;
-    color:#fff;
+    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
+    color:black;
 }
 
 .active{
-    background: orange;
-    color: white;
+    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
+    color: black;
 }
 
 .agenda{
-    margin: 20px 50px;
-    border: 5px solid black;
+    width: 80%;
+    margin: 20px auto;
+    border: 2px solid black;
+    border-radius: 50px;
     text-align: center;
     padding: 0;
     display: block;
 }
 
 .agenda li{
+    margin-bottom: 10px;
     display:inline-block;
     width: 31%;
 }
 
 .periodos{
-    color: #fff;
-    background: orange;
+    justify-content: center;
+    color: black;
+    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
     border-radius: 10px;
     display:flex;
     padding: 5px;
     margin: 10px auto;
-    width: fit-content;
-    border: 1px solid orange;
+    width: 110px;
+    border: 1px solid rgb(1, 134, 211);
+}
+
+.horarios:hover{
+    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
+    color: black;
+}
+
+.linhaHorarios{
+    padding: 0;
+    margin: 0 auto;
 }
 
 .horarios{
@@ -132,18 +123,37 @@ hr{
     width: 111.43px;
     padding: 5px;
     margin: 5px;
-    display: inline-block;
-    border: 1px solid orange;
+    border: 1px solid rgb(1, 134, 211);
 }
 
-.horarios:hover{
-    background:orange;
-    color:#fff;
+@media(max-width: 650px) {
+    *{
+        font-size: 14px;
+    }
 }
 
-.linhaHorarios{
-    text-align: center;
-    padding: 0;
-    width: 60%;
-    margin: 0 auto;
+@media(max-width: 520px) {
+    *{
+        font-size: 12px;
+    }
 }
+
+@media(max-width: 465px) {
+    .agenda{
+        border:none;
+    }
+    .agenda li{
+        position:relative;
+    }
+    .agenda li ul{
+        position: absolute;
+        display: none;
+    }
+    .agenda li:hover ul, .agenda li.over ul{
+        display: block;
+    }
+    .periodos{
+        width: fit-content;
+    }
+}
+

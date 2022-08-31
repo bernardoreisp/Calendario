@@ -9,47 +9,22 @@ let manha = listaHorarios.filter(horario => horario.final <= '12:00' && horario.
 let tarde = listaHorarios.filter(horario => horario.final <= '18:00' && horario.final > '12:00');
 let noite = listaHorarios.filter(horario => horario.inicio >= '18:00' && horario.inicio <= '23:30');
 
-function soma1Dia() {
-    const data = moment();
-    const newData = data.add(1, 'd');
-    return newData
+function diasSemana() {
+    const data1 = moment();
+    const newData1 = data1.add(1, 'd');
+    const data2 = moment();
+    const newData2 = data2.add(2, 'd');
+    const data3 = moment();
+    const newData3 = data3.add(3, 'd');
+    const data4 = moment();
+    const newData4 = data4.add(4, 'd');
+    const data5 = moment();
+    const newData5 = data5.add(5, 'd');
+    const data6 = moment();
+    const newData6 = data6.add(6, 'd');
+    return [newData1, newData2, newData3, newData4, newData5, newData6]
 }
-let quarta = soma1Dia()
-
-function soma2Dias() {
-    const data = moment();
-    const newData = data.add(2, 'd');
-    return newData
-}
-let quinta = soma2Dias()
-
-function soma3Dias() {
-    const data = moment();
-    const newData = data.add(3, 'd');
-    return newData
-}
-let sexta = soma3Dias()
-
-function soma4Dias() {
-    const data = moment();
-    const newData = data.add(4, 'd');
-    return newData
-}
-let sabado = soma4Dias()
-
-function soma5Dias() {
-    const data = moment();
-    const newData = data.add(5, 'd');
-    return newData
-}
-let domingo = soma5Dias()
-
-function soma6dias() {
-    const data = moment();
-    const newData = data.add(6, 'd');
-    return newData
-}
-let segunda = soma6dias()
+let dias = diasSemana()
 
 export function CalendarComponets() {
 
@@ -57,6 +32,22 @@ export function CalendarComponets() {
     const [styleSeg, setStyleSeg] = useState('button');
 
     function showOrHideSeg() {
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementDom === true){
+            setShowElementDom(false)
+            setShowElementTer(false)
+            setShowElementQua(false)
+            setShowElementQui(false)
+            setShowElementSex(false)
+            setShowElementSab(false)
+        }
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+            setStyleTer('button')
+            setStyleQua('button')
+            setStyleQui('button')
+            setStyleSex('button')
+            setStyleSab('button')
+            setStyleDom('button')
+        }
         if (styleSeg === 'button') {
             setStyleSeg('button active')
         } else {
@@ -73,6 +64,22 @@ export function CalendarComponets() {
     const [styleTer, setStyleTer] = useState('button')
 
     function showOrHideTer() {
+        if (showElementDom === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+            setShowElementSeg(false)
+            setShowElementDom(false)
+            setShowElementQua(false)
+            setShowElementQui(false)
+            setShowElementSex(false)
+            setShowElementSab(false)
+        }
+        if (styleSeg === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+            setStyleSeg('button')
+            setStyleQua('button')
+            setStyleQui('button')
+            setStyleSex('button')
+            setStyleSab('button')
+            setStyleDom('button')
+        }
         if (styleTer === 'button') {
             setStyleTer('button active')
         } else {
@@ -89,6 +96,22 @@ export function CalendarComponets() {
     const [styleQua, setStyleQua] = useState('button')
 
     function showOrHideQua() {
+        if (showElementTer === true || showElementDom === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+            setShowElementSeg(false)
+            setShowElementTer(false)
+            setShowElementDom(false)
+            setShowElementQui(false)
+            setShowElementSex(false)
+            setShowElementSab(false)
+        }
+        if (styleTer === 'button active' || styleSeg === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+            setStyleTer('button')
+            setStyleSeg('button')
+            setStyleQui('button')
+            setStyleSex('button')
+            setStyleSab('button')
+            setStyleDom('button')
+        }
         if (styleQua === 'button') {
             setStyleQua('button active')
         } else {
@@ -105,6 +128,22 @@ export function CalendarComponets() {
     const [styleQui, setStyleQui] = useState('button')
 
     function showOrHideQui() {
+        if (showElementTer === true || showElementQua === true || showElementDom === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+            setShowElementSeg(false)
+            setShowElementTer(false)
+            setShowElementQua(false)
+            setShowElementDom(false)
+            setShowElementSex(false)
+            setShowElementSab(false)
+        }
+        if (styleTer === 'button active' || styleQua === 'button active' || styleSeg === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+            setStyleTer('button')
+            setStyleQua('button')
+            setStyleSeg('button')
+            setStyleSex('button')
+            setStyleSab('button')
+            setStyleDom('button')
+        }
         if (styleQui === 'button') {
             setStyleQui('button active')
         } else {
@@ -121,6 +160,22 @@ export function CalendarComponets() {
     const [styleSex, setStyleSex] = useState('button')
 
     function showOrHideSex() {
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementDom === true || showElementSab === true || showElementSeg === true){
+            setShowElementSeg(false)
+            setShowElementTer(false)
+            setShowElementQua(false)
+            setShowElementQui(false)
+            setShowElementDom(false)
+            setShowElementSab(false)
+        }
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSeg === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+            setStyleTer('button')
+            setStyleQua('button')
+            setStyleQui('button')
+            setStyleSeg('button')
+            setStyleSab('button')
+            setStyleDom('button')
+        }
         if (styleSex === 'button') {
             setStyleSex('button active')
         } else {
@@ -137,6 +192,22 @@ export function CalendarComponets() {
     const [styleSab, setStyleSab] = useState('button')
 
     function showOrHideSab() {
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementDom === true || showElementSeg === true){
+            setShowElementSeg(false)
+            setShowElementTer(false)
+            setShowElementQua(false)
+            setShowElementQui(false)
+            setShowElementSex(false)
+            setShowElementDom(false)
+        }
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSeg === 'button active' || styleDom === 'button active'){
+            setStyleTer('button')
+            setStyleQua('button')
+            setStyleQui('button')
+            setStyleSex('button')
+            setStyleSeg('button')
+            setStyleDom('button')
+        }
         if (styleSab === 'button') {
             setStyleSab('button active')
         } else {
@@ -153,6 +224,22 @@ export function CalendarComponets() {
     const [styleDom, setStyleDom] = useState('button')
 
     function showOrHideDom() {
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+            setShowElementSeg(false)
+            setShowElementTer(false)
+            setShowElementQua(false)
+            setShowElementQui(false)
+            setShowElementSex(false)
+            setShowElementSab(false)
+        }
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleSeg === 'button active'){
+            setStyleTer('button')
+            setStyleQua('button')
+            setStyleQui('button')
+            setStyleSex('button')
+            setStyleSab('button')
+            setStyleSeg('button')
+        }
         if (styleDom === 'button') {
             setStyleDom('button active')
         } else {
@@ -166,90 +253,93 @@ export function CalendarComponets() {
     }
 
     const [hoje, setHoje] = useState(data.format('DD/MM'))
-    const [hoje2, setHoje2] = useState(quarta.format('DD/MM'))
-    const [hoje3, setHoje3] = useState(quinta.format('DD/MM'))
-    const [hoje4, setHoje4] = useState(sexta.format('DD/MM'))
-    const [hoje5, setHoje5] = useState(sabado.format('DD/MM'))
-    const [hoje6, setHoje6] = useState(domingo.format('DD/MM'))
-    const [hoje7, setHoje7] = useState(segunda.format('DD/MM'))
+    const [hoje2, setHoje2] = useState(dias[0].format('DD/MM'))
+    const [hoje3, setHoje3] = useState(dias[1].format('DD/MM'))
+    const [hoje4, setHoje4] = useState(dias[2].format('DD/MM'))
+    const [hoje5, setHoje5] = useState(dias[3].format('DD/MM'))
+    const [hoje6, setHoje6] = useState(dias[4].format('DD/MM'))
+    const [hoje7, setHoje7] = useState(dias[5].format('DD/MM'))
     function proxSem() {
         data.add(7, 'd')
-        quarta.add(7, 'd')
-        quinta.add(7, 'd')
-        sexta.add(7, 'd')
-        sabado.add(7, 'd')
-        domingo.add(7, 'd')
-        segunda.add(7, 'd')
+        dias[0].add(7, 'd')
+        dias[1].add(7, 'd')
+        dias[2].add(7, 'd')
+        dias[3].add(7, 'd')
+        dias[4].add(7, 'd')
+        dias[5].add(7, 'd')
         const hoje = setHoje(data.format('DD/MM'))
-        const hoje2 = setHoje2(quarta.format('DD/MM'))
-        const hoje3 = setHoje3(quinta.format('DD/MM'))
-        const hoje4 = setHoje4(sexta.format('DD/MM'))
-        const hoje5 = setHoje5(sabado.format('DD/MM'))
-        const hoje6 = setHoje6(domingo.format('DD/MM'))
-        const hoje7 = setHoje7(segunda.format('DD/MM'))
+        const hoje2 = setHoje2(dias[0].format('DD/MM'))
+        const hoje3 = setHoje3(dias[1].format('DD/MM'))
+        const hoje4 = setHoje4(dias[2].format('DD/MM'))
+        const hoje5 = setHoje5(dias[3].format('DD/MM'))
+        const hoje6 = setHoje6(dias[4].format('DD/MM'))
+        const hoje7 = setHoje7(dias[5].format('DD/MM'))
         return [hoje, hoje2, hoje3, hoje4, hoje5, hoje6, hoje7]
     }
 
     function semAnt() {
         data.subtract(7, 'd')
-        quarta.subtract(7, 'd')
-        quinta.subtract(7, 'd')
-        sexta.subtract(7, 'd')
-        sabado.subtract(7, 'd')
-        domingo.subtract(7, 'd')
-        segunda.subtract(7, 'd')
+        dias[0].subtract(7, 'd')
+        dias[1].subtract(7, 'd')
+        dias[2].subtract(7, 'd')
+        dias[3].subtract(7, 'd')
+        dias[4].subtract(7, 'd')
+        dias[5].subtract(7, 'd')
         const hoje = setHoje(data.format('DD/MM'))
-        const hoje2 = setHoje2(quarta.format('DD/MM'))
-        const hoje3 = setHoje3(quinta.format('DD/MM'))
-        const hoje4 = setHoje4(sexta.format('DD/MM'))
-        const hoje5 = setHoje5(sabado.format('DD/MM'))
-        const hoje6 = setHoje6(domingo.format('DD/MM'))
-        const hoje7 = setHoje7(segunda.format('DD/MM'))
+        const hoje2 = setHoje2(dias[0].format('DD/MM'))
+        const hoje3 = setHoje3(dias[1].format('DD/MM'))
+        const hoje4 = setHoje4(dias[2].format('DD/MM'))
+        const hoje5 = setHoje5(dias[3].format('DD/MM'))
+        const hoje6 = setHoje6(dias[4].format('DD/MM'))
+        const hoje7 = setHoje7(dias[5].format('DD/MM'))
         return [hoje, hoje2, hoje3, hoje4, hoje5, hoje6, hoje7]
     }
-    
+
     let disabled
     let dataCheck = moment().format('DD/MM')
-    if(hoje === dataCheck){
+    if (hoje === dataCheck) {
         disabled = true
-    }else{
+    } else {
         disabled = false
     }
 
+    const [activeButtonSeg, setActiveButtonSeg] = useState("")
+    const [activeButtonTer, setActiveButtonTer] = useState("")
+    const [activeButtonQua, setActiveButtonQua] = useState("")
+    const [activeButtonQui, setActiveButtonQui] = useState("")
+    const [activeButtonSex, setActiveButtonSex] = useState("")
+    const [activeButtonSab, setActiveButtonSab] = useState("")
+    const [activeButtonDom, setActiveButtonDom] = useState("")
+
     return (
         <>
-            <button id='floatRight' onClick={proxSem}>Próxima Semana {">>>"}</button>
-            <button id='floatLeft' onClick={semAnt} disabled={disabled}>{"<<<"} Semana Anterior</button>
+            <div id='layout'>
+            <button className='botaoSemana' onClick={semAnt} disabled={disabled}>{"<<<"} Semana Anterior</button>
+            <button className='botaoSemana' onClick={proxSem}>Próxima Semana {">>>"}</button>
+            </div>
 
             <div>
                 <ul className="menu">
                     <li className="listItem">
-                        <span>{semanas[data.day()]}</span>
-                        <button className={styleSeg} onClick={showOrHideSeg}>{hoje}</button>
+                        <button className={styleSeg} onClick={showOrHideSeg}>{semanas[data.day()]}<br></br>{hoje}</button>
                     </li>
                     <li className="listItem">
-                        <span>{semanas[quarta.day()]}</span>
-                        <button className={styleTer} onClick={showOrHideTer}>{hoje2}</button>
+                        <button className={styleTer} onClick={showOrHideTer}>{semanas[dias[0].day()]}<br></br>{hoje2}</button>
                     </li>
                     <li className="listItem">
-                        <span>{semanas[quinta.day()]}</span>
-                        <button className={styleQua} onClick={showOrHideQua}>{hoje3}</button>
+                        <button className={styleQua} onClick={showOrHideQua}>{semanas[dias[1].day()]}<br></br>{hoje3}</button>
                     </li>
                     <li className="listItem">
-                        <span>{semanas[sexta.day()]}</span>
-                        <button className={styleQui} onClick={showOrHideQui}>{hoje4}</button>
+                        <button className={styleQui} onClick={showOrHideQui}>{semanas[dias[2].day()]}<br></br>{hoje4}</button>
                     </li>
                     <li className="listItem">
-                        <span>{semanas[sabado.day()]}</span>
-                        <button className={styleSex} onClick={showOrHideSex}>{hoje5}</button>
+                        <button className={styleSex} onClick={showOrHideSex}>{semanas[dias[3].day()]}<br></br>{hoje5}</button>
                     </li>
                     <li className="listItem">
-                        <span>{semanas[domingo.day()]}</span>
-                        <button className={styleSab} onClick={showOrHideSab}>{hoje6}</button>
+                        <button className={styleSab} onClick={showOrHideSab}>{semanas[dias[4].day()]}<br></br>{hoje6}</button>
                     </li>
                     <li className="listItem">
-                        <span>{semanas[segunda.day()]}</span>
-                        <button className={styleDom} onClick={showOrHideDom}>{hoje7}</button>
+                        <button className={styleDom} onClick={showOrHideDom}>{semanas[dias[5].day()]}<br></br>{hoje7}</button>
                     </li>
                 </ul>
             </div>
@@ -260,7 +350,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -269,7 +359,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -278,7 +368,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -287,29 +377,29 @@ export function CalendarComponets() {
 
             {showElementTer ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {quarta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, {dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -318,29 +408,29 @@ export function CalendarComponets() {
 
             {showElementQua ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {quinta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, {dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -349,29 +439,29 @@ export function CalendarComponets() {
 
             {showElementQui ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {sexta.format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, {dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -380,29 +470,29 @@ export function CalendarComponets() {
 
             {showElementSex ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {sabado.format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, {dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -411,29 +501,29 @@ export function CalendarComponets() {
 
             {showElementSab ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {domingo.format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, {dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
@@ -442,35 +532,34 @@ export function CalendarComponets() {
 
             {showElementDom ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {segunda.format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, {dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, {dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, {dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index}>{horario.inicio+' - '+horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundColor: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
                                 ))
                             }
                         </ul>
                     </li>
                 </ul> : null}
-
         </>
     )
 }
