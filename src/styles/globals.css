@@ -39,7 +39,6 @@ ul {
 
 
 #root {
-
     margin: 10px auto;
 }
 
@@ -80,7 +79,7 @@ ul {
 }
 
 .agenda {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     border: 2px solid black;
     border-radius: 50px;

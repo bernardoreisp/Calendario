@@ -346,29 +346,29 @@ export function CalendarComponents() {
 
             {showElementSeg ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, <br></br>{data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, <br></br>{data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {data.format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, <br></br>{data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -377,29 +377,29 @@ export function CalendarComponents() {
 
             {showElementTer ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {dias[0].format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, <br></br>{dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {dias[0].format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, <br></br>{dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {dias[0].format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, <br></br>{dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -408,29 +408,29 @@ export function CalendarComponents() {
 
             {showElementQua ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {dias[1].format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, <br></br>{dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {dias[1].format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, <br></br>{dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {dias[1].format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, <br></br>{dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -439,29 +439,29 @@ export function CalendarComponents() {
 
             {showElementQui ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {dias[2].format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, <br></br>{dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {dias[2].format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, <br></br>{dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {dias[2].format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, <br></br>{dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -470,29 +470,29 @@ export function CalendarComponents() {
 
             {showElementSex ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {dias[3].format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, <br></br>{dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {dias[3].format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, <br></br>{dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {dias[3].format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, <br></br>{dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -501,29 +501,29 @@ export function CalendarComponents() {
 
             {showElementSab ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {dias[4].format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, <br></br>{dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {dias[4].format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, <br></br>{dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {dias[4].format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, <br></br>{dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -532,29 +532,29 @@ export function CalendarComponents() {
 
             {showElementDom ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, {dias[5].format('DD/MM')}</span>
+                    <li><span className='periodos'>Manhã, <br></br>{dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Tarde, {dias[5].format('DD/MM')}</span>
+                    <li><span className='periodos'>Tarde, <br></br>{dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, {dias[5].format('DD/MM')}</span>
+                    <li><span className='periodos'>Noite, <br></br>{dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundColor: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundColor: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
