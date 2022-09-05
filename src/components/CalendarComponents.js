@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import listaHorarios from '../horarios';
+import listaHorarios from '../horarios2';
 
 let data = moment();
 const semanas = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
 
-let manha = listaHorarios.filter(horario => horario.final <= '12:00' && horario.final > '00:00');
-let tarde = listaHorarios.filter(horario => horario.final <= '18:00' && horario.final > '12:00');
-let noite = listaHorarios.filter(horario => horario.inicio >= '18:00' && horario.inicio <= '23:30');
+let manha = listaHorarios.filter(horario => horario.horario < '12:00' && horario.horario > '00:00');
+let tarde = listaHorarios.filter(horario => horario.horario < '18:00' && horario.horario >= '12:00');
+let noite = listaHorarios.filter(horario => horario.horario >= '18:00' && horario.horario <= '23:30');
 
 function diasSemana() {
     const data1 = moment();
@@ -26,13 +26,13 @@ function diasSemana() {
 }
 let dias = diasSemana()
 
-export function CalendarComponets() {
+export function CalendarComponents() {
 
     const [showElementSeg, setShowElementSeg] = useState(false);
     const [styleSeg, setStyleSeg] = useState('button');
 
     function showOrHideSeg() {
-        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementDom === true){
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementDom === true) {
             setShowElementDom(false)
             setShowElementTer(false)
             setShowElementQua(false)
@@ -40,7 +40,7 @@ export function CalendarComponets() {
             setShowElementSex(false)
             setShowElementSab(false)
         }
-        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active') {
             setStyleTer('button')
             setStyleQua('button')
             setStyleQui('button')
@@ -64,7 +64,7 @@ export function CalendarComponets() {
     const [styleTer, setStyleTer] = useState('button')
 
     function showOrHideTer() {
-        if (showElementDom === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+        if (showElementDom === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true) {
             setShowElementSeg(false)
             setShowElementDom(false)
             setShowElementQua(false)
@@ -72,7 +72,7 @@ export function CalendarComponets() {
             setShowElementSex(false)
             setShowElementSab(false)
         }
-        if (styleSeg === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+        if (styleSeg === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active') {
             setStyleSeg('button')
             setStyleQua('button')
             setStyleQui('button')
@@ -96,7 +96,7 @@ export function CalendarComponets() {
     const [styleQua, setStyleQua] = useState('button')
 
     function showOrHideQua() {
-        if (showElementTer === true || showElementDom === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+        if (showElementTer === true || showElementDom === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true) {
             setShowElementSeg(false)
             setShowElementTer(false)
             setShowElementDom(false)
@@ -104,7 +104,7 @@ export function CalendarComponets() {
             setShowElementSex(false)
             setShowElementSab(false)
         }
-        if (styleTer === 'button active' || styleSeg === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+        if (styleTer === 'button active' || styleSeg === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active') {
             setStyleTer('button')
             setStyleSeg('button')
             setStyleQui('button')
@@ -128,7 +128,7 @@ export function CalendarComponets() {
     const [styleQui, setStyleQui] = useState('button')
 
     function showOrHideQui() {
-        if (showElementTer === true || showElementQua === true || showElementDom === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+        if (showElementTer === true || showElementQua === true || showElementDom === true || showElementSex === true || showElementSab === true || showElementSeg === true) {
             setShowElementSeg(false)
             setShowElementTer(false)
             setShowElementQua(false)
@@ -136,7 +136,7 @@ export function CalendarComponets() {
             setShowElementSex(false)
             setShowElementSab(false)
         }
-        if (styleTer === 'button active' || styleQua === 'button active' || styleSeg === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+        if (styleTer === 'button active' || styleQua === 'button active' || styleSeg === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleDom === 'button active') {
             setStyleTer('button')
             setStyleQua('button')
             setStyleSeg('button')
@@ -160,7 +160,7 @@ export function CalendarComponets() {
     const [styleSex, setStyleSex] = useState('button')
 
     function showOrHideSex() {
-        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementDom === true || showElementSab === true || showElementSeg === true){
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementDom === true || showElementSab === true || showElementSeg === true) {
             setShowElementSeg(false)
             setShowElementTer(false)
             setShowElementQua(false)
@@ -168,7 +168,7 @@ export function CalendarComponets() {
             setShowElementDom(false)
             setShowElementSab(false)
         }
-        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSeg === 'button active' || styleSab === 'button active' || styleDom === 'button active'){
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSeg === 'button active' || styleSab === 'button active' || styleDom === 'button active') {
             setStyleTer('button')
             setStyleQua('button')
             setStyleQui('button')
@@ -192,7 +192,7 @@ export function CalendarComponets() {
     const [styleSab, setStyleSab] = useState('button')
 
     function showOrHideSab() {
-        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementDom === true || showElementSeg === true){
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementDom === true || showElementSeg === true) {
             setShowElementSeg(false)
             setShowElementTer(false)
             setShowElementQua(false)
@@ -200,7 +200,7 @@ export function CalendarComponets() {
             setShowElementSex(false)
             setShowElementDom(false)
         }
-        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSeg === 'button active' || styleDom === 'button active'){
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSeg === 'button active' || styleDom === 'button active') {
             setStyleTer('button')
             setStyleQua('button')
             setStyleQui('button')
@@ -224,7 +224,7 @@ export function CalendarComponets() {
     const [styleDom, setStyleDom] = useState('button')
 
     function showOrHideDom() {
-        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true){
+        if (showElementTer === true || showElementQua === true || showElementQui === true || showElementSex === true || showElementSab === true || showElementSeg === true) {
             setShowElementSeg(false)
             setShowElementTer(false)
             setShowElementQua(false)
@@ -232,7 +232,7 @@ export function CalendarComponets() {
             setShowElementSex(false)
             setShowElementSab(false)
         }
-        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleSeg === 'button active'){
+        if (styleTer === 'button active' || styleQua === 'button active' || styleQui === 'button active' || styleSex === 'button active' || styleSab === 'button active' || styleSeg === 'button active') {
             setStyleTer('button')
             setStyleQua('button')
             setStyleQui('button')
@@ -314,8 +314,8 @@ export function CalendarComponets() {
     return (
         <>
             <div id='layout'>
-            <button className='botaoSemana' onClick={semAnt} disabled={disabled}>{"<<<"} Semana Anterior</button>
-            <button className='botaoSemana' onClick={proxSem}>Próxima Semana {">>>"}</button>
+                <button className='botaoSemana' onClick={semAnt} disabled={disabled}>{"<<<"} Semana Anterior</button>
+                <button className='botaoSemana' onClick={proxSem}>Próxima Semana {">>>"}</button>
             </div>
 
             <div>
@@ -350,7 +350,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -359,7 +359,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -368,7 +368,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSeg(horario) }} style={{ backgroundImage: activeButtonSeg === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -381,7 +381,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -390,7 +390,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -399,7 +399,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonTer(horario) }} style={{ backgroundImage: activeButtonTer === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -412,7 +412,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -421,7 +421,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -430,7 +430,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQua(horario) }} style={{ backgroundImage: activeButtonQua === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -443,7 +443,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -452,7 +452,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -461,7 +461,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonQui(horario) }} style={{ backgroundImage: activeButtonQui === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -474,7 +474,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -483,7 +483,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -492,7 +492,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSex(horario) }} style={{ backgroundImage: activeButtonSex === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -505,7 +505,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -514,7 +514,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -523,7 +523,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonSab(horario) }} style={{ backgroundImage: activeButtonSab === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -536,7 +536,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -545,7 +545,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 tarde.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundImage: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>
@@ -554,7 +554,7 @@ export function CalendarComponets() {
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
-                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundColor: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : ""}} >{horario.inicio + ' - ' + horario.final}</button>
+                                    <button className='horarios' key={index} onClick={() => { setActiveButtonDom(horario) }} style={{ backgroundColor: activeButtonDom === horario ? "linear-gradient(to bottom right, rgb(1, 134, 211), rgb(229, 244, 253)" : "" }} >{horario.horario}</button>
                                 ))
                             }
                         </ul>

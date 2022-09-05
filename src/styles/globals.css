@@ -13,73 +13,73 @@ body {
     box-sizing: border-box;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-#layout{
+#layout {
     margin: 0 auto;
     width: fit-content;
 }
 
-.botaoSemana{
+.botaoSemana {
     margin: 5px 10px;
     width: 150px;
     background: #fff;
     padding: 5px;
     cursor: pointer;
     border-radius: 10px;
-    border: 1px solid rgb(1, 134, 211);
+    border: 1px solid rgb(1, 85, 211);
     text-align: center;
 }
 
-.botaoSemana:hover{
-    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
+.botaoSemana:hover {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
 }
 
 
-#root{
-    
+#root {
+
     margin: 10px auto;
 }
 
-.menu{
-    margin:0px auto;
-    display:flex;
+.menu {
+    margin: 0px auto;
+    display: flex;
     width: 98%;
     list-style: none;
     padding: 0;
 }
 
 
-.listItem{
+.listItem {
     justify-content: space-between;
-    margin: 20px auto ;
+    margin: 20px auto;
     position: relative;
     width: 12%;
 }
 
-.button{
+.button {
     line-height: 30px;
     margin-top: 10px;
     width: 100%;
-    border: 1px solid rgb(1, 134, 211);
+    border: 1px solid rgb(1, 85, 211);
     cursor: pointer;
     border-radius: 10px;
     background: #fff;
 }
 
-.button:hover{
-    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
-    color:black;
-}
-
-.active{
-    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
+.button:hover {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
     color: black;
 }
 
-.agenda{
+.active {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    color: black;
+}
+
+.agenda {
     width: 80%;
     margin: 20px auto;
     border: 2px solid black;
@@ -89,71 +89,75 @@ ul{
     display: block;
 }
 
-.agenda li{
+.agenda li {
     margin-bottom: 10px;
-    display:inline-block;
+    display: inline-block;
     width: 31%;
 }
 
-.periodos{
+.periodos {
     justify-content: center;
     color: black;
-    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
     border-radius: 10px;
-    display:flex;
+    display: flex;
     padding: 5px;
     margin: 10px auto;
-    width: 110px;
-    border: 1px solid rgb(1, 134, 211);
+    width: 40%;
+    border: 1px solid rgb(1, 85, 211);
 }
 
-.horarios:hover{
-    background-image:linear-gradient(to bottom right, rgb(1, 134, 211), rgb(216, 216, 216));
+.horarios:hover {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
     color: black;
 }
 
-.linhaHorarios{
+.linhaHorarios {
     padding: 0;
     margin: 0 auto;
 }
 
-.horarios{
+.horarios {
     border-radius: 10px;
     cursor: pointer;
-    width: 111.43px;
+    width: fit-content;
     padding: 5px;
     margin: 5px;
-    border: 1px solid rgb(1, 134, 211);
+    border: 1px solid rgb(1, 85, 211);
 }
 
 @media(max-width: 650px) {
-    *{
+    * {
         font-size: 14px;
     }
 }
 
 @media(max-width: 520px) {
-    *{
+    * {
         font-size: 12px;
     }
 }
 
 @media(max-width: 465px) {
-    .agenda{
-        border:none;
+    .agenda {
+        border: none;
     }
-    .agenda li{
-        position:relative;
+
+    .agenda li {
+        position: relative;
     }
-    .agenda li ul{
+
+    .agenda li ul {
         position: absolute;
         display: none;
     }
-    .agenda li:hover ul, .agenda li.over ul{
+
+    .agenda li:hover ul,
+    .agenda li.over ul {
         display: block;
     }
-    .periodos{
+
+    .periodos {
         width: fit-content;
     }
 }
-

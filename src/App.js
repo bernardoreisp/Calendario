@@ -1,9 +1,9 @@
-import { CalendarComponets } from "./components/CalendarComponents";
+import { CalendarComponents } from "./components/CalendarComponents";
 
 
 function App() {
   return (
-    <CalendarComponets />
+    <CalendarComponents />
   );
 }
 
