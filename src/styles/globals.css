@@ -37,7 +37,6 @@ ul {
     background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
 }
 
-
 #root {
     margin: 10px auto;
 }
@@ -49,7 +48,6 @@ ul {
     list-style: none;
     padding: 0;
 }
-
 
 .listItem {
     justify-content: space-between;
@@ -89,9 +87,17 @@ ul {
 }
 
 .agenda li {
-    margin-bottom: 10px;
+    height: fit-content;
     display: inline-block;
     width: 31%;
+}
+
+.divisoriaRight {
+    border-right: 1px solid black;
+}
+
+.divisoriaLeft {
+    border-left: 1px solid black;
 }
 
 .periodos {

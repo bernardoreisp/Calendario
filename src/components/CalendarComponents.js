@@ -346,7 +346,7 @@ export function CalendarComponents() {
 
             {showElementSeg ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, <br></br>{data.format('DD/MM')}</span>
+                    <li className='divisoriaRight'><span className='periodos'>Manhã, <br></br>{data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
@@ -364,7 +364,7 @@ export function CalendarComponents() {
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, <br></br>{data.format('DD/MM')}</span>
+                    <li className='divisoriaLeft'><span className='periodos'>Noite, <br></br>{data.format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
@@ -377,7 +377,7 @@ export function CalendarComponents() {
 
             {showElementTer ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, <br></br>{dias[0].format('DD/MM')}</span>
+                    <li className='divisoriaRight'><span className='periodos'>Manhã, <br></br>{dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
@@ -395,7 +395,7 @@ export function CalendarComponents() {
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, <br></br>{dias[0].format('DD/MM')}</span>
+                    <li className='divisoriaLeft'><span className='periodos'>Noite, <br></br>{dias[0].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
@@ -408,7 +408,7 @@ export function CalendarComponents() {
 
             {showElementQua ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, <br></br>{dias[1].format('DD/MM')}</span>
+                    <li className='divisoriaRight'><span className='periodos'>Manhã, <br></br>{dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
@@ -426,7 +426,7 @@ export function CalendarComponents() {
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, <br></br>{dias[1].format('DD/MM')}</span>
+                    <li className='divisoriaLeft'><span className='periodos'>Noite, <br></br>{dias[1].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
@@ -439,7 +439,7 @@ export function CalendarComponents() {
 
             {showElementQui ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, <br></br>{dias[2].format('DD/MM')}</span>
+                    <li className='divisoriaRight'><span className='periodos'>Manhã, <br></br>{dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
@@ -457,7 +457,7 @@ export function CalendarComponents() {
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, <br></br>{dias[2].format('DD/MM')}</span>
+                    <li className='divisoriaLeft'><span className='periodos'>Noite, <br></br>{dias[2].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
@@ -470,7 +470,7 @@ export function CalendarComponents() {
 
             {showElementSex ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, <br></br>{dias[3].format('DD/MM')}</span>
+                    <li className='divisoriaRight'><span className='periodos'>Manhã, <br></br>{dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
@@ -488,7 +488,7 @@ export function CalendarComponents() {
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, <br></br>{dias[3].format('DD/MM')}</span>
+                    <li className='divisoriaLeft'><span className='periodos'>Noite, <br></br>{dias[3].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
@@ -501,7 +501,7 @@ export function CalendarComponents() {
 
             {showElementSab ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, <br></br>{dias[4].format('DD/MM')}</span>
+                    <li className='divisoriaRight'><span className='periodos'>Manhã, <br></br>{dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
@@ -519,7 +519,7 @@ export function CalendarComponents() {
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, <br></br>{dias[4].format('DD/MM')}</span>
+                    <li className='divisoriaLeft'><span className='periodos'>Noite, <br></br>{dias[4].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
@@ -532,7 +532,7 @@ export function CalendarComponents() {
 
             {showElementDom ?
                 <ul className='agenda'>
-                    <li><span className='periodos'>Manhã, <br></br>{dias[5].format('DD/MM')}</span>
+                    <li className='divisoriaRight'><span className='periodos'>Manhã, <br></br>{dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 manha.map((horario, index) => (
@@ -550,7 +550,7 @@ export function CalendarComponents() {
                             }
                         </ul>
                     </li>
-                    <li><span className='periodos'>Noite, <br></br>{dias[5].format('DD/MM')}</span>
+                    <li className='divisoriaLeft'><span className='periodos'>Noite, <br></br>{dias[5].format('DD/MM')}</span>
                         <ul className='linhaHorarios'>
                             {
                                 noite.map((horario, index) => (
