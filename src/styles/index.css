@@ -1,6 +1,5 @@
 html,
 body {
-    min-width: 375px;
     padding: 0;
     margin: 0;
     font-family: "Open Sans", Arial, sans-serif;
@@ -17,8 +16,31 @@ ul {
     list-style: none;
 }
 
+.imagemLogo{
+    width: 20%;
+}
+
+.imagemCapa{
+    width: 80%;
+}
+
+.containerMenu{
+    width: 25%;
+    float: left;
+    background-color: blue;
+    height: 200px;
+}
+
+.calendarContainer{
+    margin-top: 20px;
+    margin-right: 50px;
+    min-width: 375px;
+    width: 70%;
+    float: right;
+}
+
 #layout {
-    margin: 0 auto;
+    margin: auto;
     width: fit-content;
 }
 
@@ -35,10 +57,6 @@ ul {
 
 .botaoSemana:hover {
     background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
-}
-
-#root {
-    margin: 10px auto;
 }
 
 .menu {
@@ -78,9 +96,9 @@ ul {
 
 .agenda {
     width: 90%;
-    margin: 20px auto;
-    border: 2px solid black;
-    border-radius: 50px;
+    margin: 50px auto;
+    border: 2px solid rgb(1, 85, 211);
+    border-radius: 20px;
     text-align: center;
     padding: 0;
     display: block;
@@ -89,15 +107,15 @@ ul {
 .agenda li {
     height: fit-content;
     display: inline-block;
-    width: 31%;
+    width: 33.33%;
 }
 
 .divisoriaRight {
-    border-right: 1px solid black;
+    border-right: 2px solid rgb(1, 85, 211);
 }
 
 .divisoriaLeft {
-    border-left: 1px solid black;
+    border-left: 2px solid rgb(1, 85, 211);
 }
 
 .periodos {
@@ -129,6 +147,16 @@ ul {
     padding: 5px;
     margin: 5px;
     border: 1px solid rgb(1, 85, 211);
+}
+
+.horariosActive {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    border: 1px solid rgb(1, 85, 211);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    width: fit-content;
 }
 
 @media(max-width: 650px) {

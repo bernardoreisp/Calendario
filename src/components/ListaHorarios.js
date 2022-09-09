@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import listaHorarios from '../horarios2';
+import listaHorarios from '../horarios';
 
 function ListaHorarios ({dia}) {
 
@@ -16,7 +16,7 @@ function ListaHorarios ({dia}) {
                     <ul className='linhaHorarios'>
                         {
                             manha.map((horario, index) => (
-                                <button className='horarios' key={index} onClick={() => { setActiveButton(horario) }} style={{ backgroundImage: activeButton === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
+                                <button className={ activeButton === horario ? 'horariosActive':'horarios'} key={index} onClick={() => { setActiveButton(horario) }}>{horario.horario}</button>
                             ))
                         }
                     </ul>
@@ -25,7 +25,7 @@ function ListaHorarios ({dia}) {
                     <ul className='linhaHorarios'>
                         {
                             tarde.map((horario, index) => (
-                                <button className='horarios' key={index} onClick={() => { setActiveButton(horario) }} style={{ backgroundImage: activeButton === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
+                                <button className={ activeButton === horario ? 'horariosActive':'horarios'} key={index} onClick={() => { setActiveButton(horario) }}>{horario.horario}</button>
                             ))
                         }
                     </ul>
@@ -34,7 +34,7 @@ function ListaHorarios ({dia}) {
                     <ul className='linhaHorarios'>
                         {
                             noite.map((horario, index) => (
-                                <button className='horarios' key={index} onClick={() => { setActiveButton(horario) }} style={{ backgroundImage: activeButton === horario ? "linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216)" : "" }} >{horario.horario}</button>
+                                <button className={ activeButton === horario ? 'horariosActive':'horarios'} key={index} onClick={() => { setActiveButton(horario) }} >{horario.horario}</button>
                             ))
                         }
                     </ul>
