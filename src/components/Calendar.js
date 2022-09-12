@@ -71,11 +71,11 @@ export function Calendar() {
 
     let disabled
     let dataCheck = moment().format('DD/MM')
-        if (hoje === dataCheck) {
-            disabled = true
-        } else {
-            disabled = false
-        }
+    if (hoje === dataCheck) {
+        disabled = true
+    } else {
+        disabled = false
+    }
 
     const diasBotao = [
         {
@@ -120,30 +120,36 @@ export function Calendar() {
 
     return (
         <>
+            <h1>Escolha o melhor horário para você:</h1>
             <div className='calendarContainer'>
-                <header id='layout'>
-                    <BotaoSemana evento= {semAnt} disabled= {disabled} texto= '<<< Semana Anterior' />
-                    <BotaoSemana evento= {proxSem} disabled= {false} texto= 'Próxima Semana >>>' />
-                </header>
+                <div id='layout'>
+                    <BotaoSemana evento={semAnt} disabled={disabled} texto='<<< Semana Anterior' />
+                    <BotaoSemana evento={proxSem} disabled={false} texto='Próxima Semana >>>' />
+                </div>
 
                 <ul className="menu">
                     {
                         diasBotao.map((propriedades) => (
                             <BotaoDias
-                                style= {style === propriedades.id ? 'button active' : 'button'}
-                                key= {propriedades.id}
-                                dia= {propriedades.dia}
-                                show= {() => {
-                                    setShowElement(propriedades.id)
-                                    setStyle(propriedades.id)
+                                style={style === propriedades.id ? 'button active' : 'button'}
+                                key={propriedades.id}
+                                dia={propriedades.dia}
+                                show={() => {
+                                    if (showElement === false) {
+                                        setShowElement(propriedades.id)
+                                        setStyle(propriedades.id)
+                                    } else {
+                                        setShowElement(false)
+                                        setStyle('button')
+                                    }
                                 }}
-                                semana= {propriedades.semana} />
+                                semana={propriedades.semana} />
                         ))
                     }
                 </ul>
                 {
                     diasBotao.map((propriedades) => (
-                        showElement === propriedades.id ? <ListaHorarios key= {propriedades.id} dia= {propriedades.dia} /> : null
+                        showElement === propriedades.id ? <ListaHorarios key={propriedades.id} dia={propriedades.dia} /> : null
                     ))
                 }
             </div>

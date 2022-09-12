@@ -1,13 +1,15 @@
 html,
 body {
+    min-width: 375px;
     padding: 0;
     margin: 0;
     font-family: "Open Sans", Arial, sans-serif;
-    background: rgb(255, 255, 255);
+    background: rgb(240, 240, 240);
     color: rgb(0, 0, 0);
 }
 
 * {
+    margin: 0;
     font-size: 20px;
     box-sizing: border-box;
 }
@@ -16,27 +18,63 @@ ul {
     list-style: none;
 }
 
+h1{
+    padding: 5px;
+    margin-top: 10px;
+    color: #1A202C;
+    font-size: 170%;
+    text-align: center;
+}
+
 .imagemLogo{
     width: 20%;
 }
 
 .imagemCapa{
+    margin-top: 80px;
     width: 80%;
 }
 
 .containerMenu{
-    width: 25%;
-    float: left;
-    background-color: blue;
-    height: 200px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    height: 80px;
+    box-shadow: 0 0 20px 3px;
+}
+
+.sidebarItem{
+    display: flex;
+    align-items: center;
+    background-color: #1A202C;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 15px 20px;
+}
+
+.sidebarIcon{
+    margin: 0 20px;
+}
+
+.menuIcon{
+    color: white;
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 .calendarContainer{
-    margin-top: 20px;
-    margin-right: 50px;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px auto;
     min-width: 375px;
     width: 70%;
-    float: right;
 }
 
 #layout {
@@ -51,7 +89,7 @@ ul {
     padding: 5px;
     cursor: pointer;
     border-radius: 10px;
-    border: 1px solid rgb(1, 85, 211);
+    border: 1px solid #1A202C;
     text-align: center;
 }
 
@@ -70,7 +108,6 @@ ul {
 .listItem {
     justify-content: space-between;
     margin: 20px auto;
-    position: relative;
     width: 12%;
 }
 
@@ -78,7 +115,7 @@ ul {
     line-height: 30px;
     margin-top: 10px;
     width: 100%;
-    border: 1px solid rgb(1, 85, 211);
+    border: 1px solid #1A202C;
     cursor: pointer;
     border-radius: 10px;
     background: #fff;
@@ -97,7 +134,7 @@ ul {
 .agenda {
     width: 90%;
     margin: 50px auto;
-    border: 2px solid rgb(1, 85, 211);
+    border: 2px solid #1A202C;
     border-radius: 20px;
     text-align: center;
     padding: 0;
@@ -111,11 +148,11 @@ ul {
 }
 
 .divisoriaRight {
-    border-right: 2px solid rgb(1, 85, 211);
+    border-right: 2px solid #1A202C;
 }
 
 .divisoriaLeft {
-    border-left: 2px solid rgb(1, 85, 211);
+    border-left: 2px solid #1A202C;
 }
 
 .periodos {
@@ -127,7 +164,6 @@ ul {
     padding: 5px;
     margin: 10px auto;
     width: 40%;
-    border: 1px solid rgb(1, 85, 211);
 }
 
 .horarios:hover {
@@ -146,12 +182,12 @@ ul {
     width: fit-content;
     padding: 5px;
     margin: 5px;
-    border: 1px solid rgb(1, 85, 211);
+    border: 1px solid #1A202C;
 }
 
 .horariosActive {
     background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
-    border: 1px solid rgb(1, 85, 211);
+    border: 1px solid #1A202C;
     border-radius: 10px;
     cursor: pointer;
     padding: 5px;
@@ -177,11 +213,15 @@ ul {
     }
 
     .agenda li {
-        position: relative;
+        position: static;
     }
 
     .agenda li ul {
+        width: 100%;
         position: absolute;
+        margin: 10 auto;
+        left: 0px;
+        min-width: 375px;
         display: none;
     }
 
