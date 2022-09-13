@@ -1,0 +1,48 @@
+#layout {
+    margin: auto;
+    width: fit-content;
+}
+
+.calendarContainer {
+    padding-top: 130px;
+    border-radius: 10px;
+    margin: 0 auto;
+    min-width: 375px;
+    width: 70%;
+}
+
+.menu {
+    margin: 0 auto;
+    display: flex;
+    width: 98%;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.button {
+    line-height: 30px;
+    margin-top: 10px;
+    width: 100%;
+    border: 1px solid #1A202C;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.button:hover {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    color: black;
+}
+
+.active {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    color: black;
+}
+
+@media(max-width: 465px) {
+
+    .calendarContainer {
+        padding-top: 90px;
+    }
+}

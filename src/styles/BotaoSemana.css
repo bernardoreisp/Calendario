@@ -1,0 +1,15 @@
+.botaoSemana {
+    margin: 5px 10px;
+    width: 150px;
+    background: #fff;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #1A202C;
+    text-align: center;
+    box-shadow: 0 0 10px 1px;
+}
+
+.botaoSemana:hover {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+}

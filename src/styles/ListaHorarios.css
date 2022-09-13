@@ -1,0 +1,97 @@
+.agenda {
+    width: 90%;
+    margin: 50px auto;
+    border: 2px solid #1A202C;
+    border-radius: 20px;
+    text-align: center;
+    padding: 0;
+    display: block;
+}
+
+.agenda li {
+    height: fit-content;
+    display: inline-block;
+    width: 33%;
+}
+
+.periodos {
+    border: none;
+    justify-content: center;
+    color: black;
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    border-radius: 10px;
+    display: flex;
+    padding: 5px;
+    margin: 10px auto;
+    width: 60%;
+}
+
+.linhaHorarios {
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.horarios {
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid #1A202C;
+}
+
+.horarios:hover {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    color: black;
+}
+
+.horariosActive {
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    border: 1px solid #1A202C;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    width: 50%;
+}
+
+@media(max-width: 465px) {
+
+    .agenda {
+        border: none;
+        margin: 5px auto;
+    }
+
+    .agenda li {
+        position: static;
+    }
+
+    .agenda li ul {
+        border: 2px solid #1A202C;
+        border-radius: 10px;
+        width: 100%;
+        position: absolute;
+        margin: 20px auto;
+        left: 0px;
+        min-width: 375px;
+        display: none;
+    }
+
+    .agenda li:hover ul,
+    .agenda li.over ul {
+        display: block;
+
+    }
+
+    .periodos {
+        width: 70%;
+    }
+
+    .horarios {
+        width: 20%;
+    }
+
+    .horariosActive {
+        width: 20%;
+    }
+}

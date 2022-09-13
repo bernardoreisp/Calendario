@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Calendar } from "./components/Calendar";
-import Header from "./components/Header";
-import MenuLateral from "./components/MenuLateral";
-
+import { Calendar } from "./components/Agenda/Calendar";
+import Header from "./components/Sidebar/MenuLateral";
 import './styles/index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MenuLateral/>
-    <Header/>
-    <Calendar/>
+    <Header />
+    <Calendar />
   </React.StrictMode>
 );

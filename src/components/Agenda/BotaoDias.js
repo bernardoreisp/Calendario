@@ -1,4 +1,6 @@
-function BotaoDias({style, dia, show, semana}) {
+import '../../styles/BotaoDias.css'
+
+function BotaoDias({ style, dia, show, semana }) {
     return (
         <li className="listItem">
             <button className={style} onClick={show}>{semana}<br></br>{dia}</button>

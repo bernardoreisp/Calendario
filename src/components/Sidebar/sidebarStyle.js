@@ -13,11 +13,11 @@ export const Container = styled.div`
     > svg {
         position: fixed;
         color: white;
-        width:30px;
-        height 30px;
+        width: 30px;
+        height: 30px;
         margin-top: 25px;
         margin-left: 20px;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     @keyFrames showSidebar {

@@ -1,0 +1,29 @@
+.imagemLogo {
+    width: 20%;
+}
+
+.imagemCapa {
+    margin-top: 80px;
+    width: 80%;
+}
+
+@media(max-width: 650px) {
+
+    .imagemCapa {
+        margin-top: 70px;
+    }
+}
+
+@media(max-width: 520px) {
+    
+    .imagemCapa {
+        margin-top: 60px;
+    }
+}
+
+@media(max-width: 465px) {
+    
+    .imagemCapa {
+        margin-top: 50px;
+    }
+}

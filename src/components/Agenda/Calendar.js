@@ -3,6 +3,7 @@ import moment from 'moment';
 import ListaHorarios from "./ListaHorarios";
 import BotaoDias from './BotaoDias';
 import BotaoSemana from './BotaoSemana';
+import '../../styles/Calendar.css'
 
 let data = moment();
 const semana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];
@@ -120,8 +121,9 @@ export function Calendar() {
 
     return (
         <>
-            <h1>Escolha o melhor horário para você:</h1>
+
             <div className='calendarContainer'>
+                <h1>Escolha o melhor horário para você:</h1>
                 <div id='layout'>
                     <BotaoSemana evento={semAnt} disabled={disabled} texto='<<< Semana Anterior' />
                     <BotaoSemana evento={proxSem} disabled={false} texto='Próxima Semana >>>' />
