@@ -1,29 +1,53 @@
-.imagemLogo {
-    width: 20%;
+.containerMenu {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background-image: linear-gradient(to bottom right, rgb(1, 85, 211), rgb(216, 216, 216));
+    height: 80px;
+    box-shadow: 0 0 20px 3px;
 }
 
-.imagemCapa {
-    margin-top: 80px;
-    width: 80%;
+.menuIcon {
+    color: white;
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 @media(max-width: 650px) {
 
-    .imagemCapa {
-        margin-top: 70px;
+    .containerMenu {
+        height: 70px;
+    }
+
+    .menuIcon {
+        margin-top: 20px;
+        margin-left: 15px;
     }
 }
 
 @media(max-width: 520px) {
-    
-    .imagemCapa {
-        margin-top: 60px;
+
+    .containerMenu {
+        height: 60px;
+    }
+
+    .menuIcon {
+        margin-top: 15px;
+        margin-left: 12px;
     }
 }
 
 @media(max-width: 465px) {
-    
-    .imagemCapa {
-        margin-top: 50px;
+
+    .menuIcon {
+        margin-top: 12px;
+        margin-left: 10px;
+    }
+
+    .containerMenu {
+        height: 50px;
     }
 }

@@ -25,7 +25,7 @@ function diasSemana() {
 }
 let dias = diasSemana()
 
-export function Calendar() {
+function Calendar() {
 
     const [hoje, setHoje] = useState(data.format('DD/MM'))
     const [hoje2, setHoje2] = useState(dias[0].format('DD/MM'))
@@ -158,3 +158,5 @@ export function Calendar() {
         </>
     )
 }
+
+export default Calendar

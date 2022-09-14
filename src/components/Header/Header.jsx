@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa'
 import Sidebar from './Sidebar'
-import '../../styles/MenuLateral.css'
+import '../../styles/Header.css'
 
-function MenuLateral() {
+function Header() {
 
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar(!sidebar)
@@ -18,4 +18,4 @@ function MenuLateral() {
     )
 }
 
-export default MenuLateral
+export default Header
