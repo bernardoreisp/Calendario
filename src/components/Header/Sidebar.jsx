@@ -16,7 +16,7 @@ function Sidebar({ active }) {
                 <FaTimes onClick= {closeSidebar} />
                 <Content>
                     <SidebarItem Icon={AiOutlineFieldTime} text= 'Agende seu horário' link='/' />
-                    <SidebarItem Icon={BsFillPersonFill} text= 'Cadastros' link='/cadastros' />
+                    <SidebarItem Icon={BsFillPersonFill} text= 'Cadastro' link='/cadastros' />
                 </Content>
             </Container>
         </>

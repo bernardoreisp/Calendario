@@ -1,22 +1,49 @@
+import {useState} from 'react'
 import '../../styles/Cadastro.css'
 
 function Cadastro() {
+
+    const cadastros = []
+    const [cadastro, setCadastro] = useState({})
+    const [endImg, setEndImg] = useState('')
+    const [image, setImage] = useState('')
+
+    const handleInputChange = (e) => {
+        const {name, value} = e.target
+        setCadastro({ ...cadastro, [name]: value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.target)
+        const data = Object.fromEntries(formData)
+        cadastros.push(cadastro)
+        console.log(cadastros)
+    }
+
     return (
 
         <div className= "cadastroContainer">
-            <h1>Cadastros</h1>
-            <form>
+            <h1>Cadastro</h1>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label for='nome'>Nome: </label>
+                    {image ? '' : <img className='imagemCadastro ' src="./iconeUsuario.png" alt='Imagem' width='200' height='200'/>}
                     <br></br>
-                    <input type='text' id='nome' name='nome'></input>
+                    <input className='inputFoto' type='file' name='foto' onChange={handleInputChange} value={cadastro.foto || ''} />
                 </div>
-                <div className='inputs'>
-                    <label className='inputs' for='sobrenome'>Sobrenome: </label>
-                    <br></br>                
-                    <input type='text' id='sobrenome' name='sobrenome'></input>
+                <div className='inputCadastros'>
+                    <span>Nome: </span>
+                    <br></br>
+                    <input type='text' name='nome' onChange={handleInputChange} value={cadastro.nome || ''}/>
                 </div>
-                <input className='inputs' type='submit' value='submit'></input>
+                <br></br>
+                <div>
+                    <span>Sobrenome: </span>
+                    <br></br>
+                    <input type='text' name='sobrenome' onChange={handleInputChange} value={cadastro.sobrenome || ''}/>
+                </div>
+                <br></br>
+                <button type='submit' className='botaoSubmit' >Cadastrar</button>
             </form>
         </div>
     )

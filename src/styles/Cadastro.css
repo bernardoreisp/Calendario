@@ -4,6 +4,22 @@
     padding-top: 130px;
 }
 
-.inputs{
-    margin-top: 20px;
+.inputCadastros{
+    margin-top: 40px;
+}
+
+.botaoSubmit{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.imagemCadastro{
+    border: 2px solid black;
+    display:block;
+    margin: 0 auto;
+}
+
+.inputFoto{
+    display: block;
+    margin: 0 auto;
 }
