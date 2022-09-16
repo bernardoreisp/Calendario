@@ -1,7 +1,7 @@
 import { FaTimes } from "react-icons/fa";
 import { AiOutlineFieldTime } from "react-icons/ai"
 import { BsFillPersonFill } from "react-icons/bs"
-import { Container, Content } from './sidebarStyle';
+import { Container, Content } from '../../styles/sidebarStyle';
 import SidebarItem from './SidebarItem';
 
 function Sidebar({ active }) {

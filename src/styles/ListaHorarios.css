@@ -34,7 +34,7 @@
 .horarios {
     border-radius: 10px;
     cursor: pointer;
-    width: 50%;
+    width: 60px;
     padding: 5px;
     margin: 5px;
     border: 1px solid #1A202C;
@@ -52,7 +52,7 @@
     cursor: pointer;
     padding: 5px;
     margin: 5px;
-    width: 50%;
+    width: 60px;
 }
 
 @media(max-width: 465px) {
@@ -84,7 +84,7 @@
     }
 
     .periodos {
-        width: 70%;
+        width: 85%;
     }
 
     .horarios {

@@ -31,13 +31,13 @@ function Cadastro() {
                     <br></br>
                     <input className='inputFoto' type='file' name='foto' onChange={handleInputChange} value={cadastro.foto || ''} />
                 </div>
-                <div className='inputCadastros'>
+                <div className='inputNome'>
                     <span>Nome: </span>
                     <br></br>
                     <input type='text' name='nome' onChange={handleInputChange} value={cadastro.nome || ''}/>
                 </div>
                 <br></br>
-                <div>
+                <div className='inputSobrenome'>
                     <span>Sobrenome: </span>
                     <br></br>
                     <input type='text' name='sobrenome' onChange={handleInputChange} value={cadastro.sobrenome || ''}/>
