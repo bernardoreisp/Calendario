@@ -5,18 +5,18 @@ function Cadastro() {
 
     const cadastros = []
     const [cadastro, setCadastro] = useState({})
-    const [endImg, setEndImg] = useState('')
     const [image, setImage] = useState('')
 
     const handleInputChange = (e) => {
         const {name, value} = e.target
         setCadastro({ ...cadastro, [name]: value })
-    }
+        setImage(e.target.files[0])
+    } 
 
     const handleSubmit = (e) => {
         e.preventDefault()
         const formData = new FormData(e.target)
-        const data = Object.fromEntries(formData)
+        Object.fromEntries(formData)
         cadastros.push(cadastro)
         console.log(cadastros)
     }
@@ -27,7 +27,7 @@ function Cadastro() {
             <h1>Cadastro</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    {image ? '' : <img className='imagemCadastro ' src="./iconeUsuario.png" alt='Imagem' width='200' height='200'/>}
+                    {image ? <img className='imagemCadastro' src={URL.createObjectURL(image)} alt='imagem' /> : <img className='imagemCadastro' src={'./iconeUsuario.jpg'} alt='Imagem' />}
                     <br></br>
                     <input className='inputFoto' type='file' name='foto' onChange={handleInputChange} value={cadastro.foto || ''} />
                 </div>

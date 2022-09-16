@@ -1,6 +1,6 @@
 .cadastroContainer {
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     padding-top: 130px;
 }
 
@@ -14,12 +14,14 @@
 }
 
 .imagemCadastro{
-    border: 2px solid black;
+    width: 150px;
+    height: 150px;
     display:block;
     margin: 0 auto;
 }
 
 .inputFoto{
+    font-size: 10px;
     display: block;
     margin: 0 auto;
 }

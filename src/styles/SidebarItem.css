@@ -10,6 +10,9 @@
     cursor: pointer;
     border-radius: 10px;
     margin: 0 15px 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .sidebarIcon {
